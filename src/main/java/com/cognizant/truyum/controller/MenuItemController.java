@@ -14,6 +14,7 @@ import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 
+import com.cognizant.truyum.exception.TruyumNotFoundException;
 import com.cognizant.truyum.model.MenuItem;
 import com.cognizant.truyum.service.MenuItemService;
 
@@ -36,7 +37,7 @@ public class MenuItemController {
 		return "menu-item-list-admin";
 	}
 	
-	@GetMapping(value = "/show-menu-list-customer")
+	@GetMapping(value = {"/show-menu-list-customer", "/"})
 	public String showMenuItemListCustomer(ModelMap model) throws SystemException {
 		log.info("Start");
 		List<MenuItem> menuItemList = menuItemService.getMenuItemListCustomer();
@@ -46,7 +47,7 @@ public class MenuItemController {
 	}
 
 	@GetMapping(value = "/show-edit-menu-item")
-	public String showEditMenuItem(@RequestParam("menuItemId") long menuItemId, ModelMap model) {
+	public String showEditMenuItem(@RequestParam("menuItemId") long menuItemId, ModelMap model) throws TruyumNotFoundException {
 		log.info("Start");
 		MenuItem menuItem = menuItemService.getMenuItem(menuItemId);
 		model.addAttribute("menuItemBean", menuItem);

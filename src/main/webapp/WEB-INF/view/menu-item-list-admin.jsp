@@ -1,5 +1,6 @@
 <%@page isELIgnored="false"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
+<%@ taglib prefix = "fmt" uri ="http://java.sun.com/jsp/jstl/fmt"%>
 <html>
 <head>
 <title>truYum</title>
@@ -31,7 +32,7 @@
 					<td class="col-left">${menuItem.name}</td>
 					<td class="col-right">${menuItem.price}</td>
 					<td>${menuItem.active ? 'Yes': 'No'}</td>
-					<td>${menuItem.dateOfLaunch}</td>
+					<td><fmt:formatDate pattern = "dd-MM-yyyy" value ="${menuItem.dateOfLaunch}" /></td>
 					<td>${menuItem.category}</td>
 					<td>${menuItem.freeDelivery ? 'Yes': 'No'}</td>
 					<td><a class="action-link" href="/show-edit-menu-item?menuItemId=${menuItem.id}">Edit</a></td>

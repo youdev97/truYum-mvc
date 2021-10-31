@@ -52,7 +52,7 @@
 						<label class="form-item" for="field-dateOfLaunch">Date of Launch</label>
 						<sf:input class="form-input" type="text"
 							name="dateOfLaunch" id="field-dateOfLaunch" path="dateOfLaunch"
-							placeholder="dd/mm/yyyy"/>
+							placeholder="dd-MM-yyyy"/>
 						<sf:errors path="dateOfLaunch" />
 					</td>
 					<td>
@@ -62,6 +62,7 @@
 							<sf:option value="Starters">Starters</sf:option>
 							<sf:option value="Main Course">Main Course</sf:option>
 							<sf:option value="Dessert">Dessert</sf:option>
+							<sf:option value="Sides">Sides</sf:option>
 							<sf:option value="Drinks">Drinks</sf:option>
 						</sf:select>
 					</td>

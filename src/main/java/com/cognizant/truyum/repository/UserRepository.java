@@ -18,5 +18,5 @@ public interface UserRepository extends JpaRepository<User, Long> {
 	User getMenuItems(@Param("userId") long userId);
 
 	@Query("SELECT SUM(mi.price) FROM Cart c JOIN MenuItem mi on c.menuItem=mi.id WHERE c.user.id = :userId")
-	double getCartTotal(@Param("userId") long userId);
+	Optional<Double> getCartTotal(@Param("userId") long userId);
 }

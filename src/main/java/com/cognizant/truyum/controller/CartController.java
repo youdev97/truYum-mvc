@@ -11,6 +11,7 @@ import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 
 import com.cognizant.truyum.dto.CartDTO;
 import com.cognizant.truyum.exception.CartEmptyException;
+import com.cognizant.truyum.exception.TruyumNotFoundException;
 import com.cognizant.truyum.model.MenuItem;
 import com.cognizant.truyum.service.CartService;
 
@@ -24,7 +25,7 @@ public class CartController {
 	CartService cartService;
 
 	@GetMapping(value = "/add-to-cart")
-	public String addToCart(@RequestParam("menuItemId") long menuItemId, RedirectAttributes redirectAttributes) {
+	public String addToCart(@RequestParam("menuItemId") long menuItemId, RedirectAttributes redirectAttributes) throws TruyumNotFoundException {
 		log.info("Start");
 		cartService.addCartItem(1, menuItemId);
 		redirectAttributes.addFlashAttribute("addCartStatus", true);
@@ -33,7 +34,7 @@ public class CartController {
 	}
 
 	@GetMapping(value = "/show-cart")
-	public String showCart(@RequestParam("userId") long userId, ModelMap model) {
+	public String showCart(@RequestParam("userId") long userId, ModelMap model) throws TruyumNotFoundException {
 		log.info("Start");
 		CartDTO cart = getAllCartItems(userId);
 		model.addAttribute("cart", cart);
@@ -43,7 +44,7 @@ public class CartController {
 
 	@GetMapping(value = "/remove-cart")
 	public String removeCart(@RequestParam("menuItemId") long menuItemId, @RequestParam("userId") long userId,
-			RedirectAttributes redirectAttributes) {
+			RedirectAttributes redirectAttributes) throws TruyumNotFoundException {
 		log.info("Start");
 		cartService.removeCartItem(userId, menuItemId);
 		redirectAttributes.addFlashAttribute("removeCartItemStatus", true);
@@ -51,7 +52,7 @@ public class CartController {
 		return "redirect:/show-cart?userId="+userId;
 	}
 
-	CartDTO getAllCartItems(long userId) {
+	CartDTO getAllCartItems(long userId) throws TruyumNotFoundException {
 		CartDTO cart = new CartDTO();
 		try {
 			Set<MenuItem> menuItemList = cartService.getAllCartItems(userId);

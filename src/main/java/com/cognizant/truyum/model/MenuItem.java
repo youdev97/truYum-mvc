@@ -54,7 +54,7 @@ public class MenuItem {
 
 	@NotNull(message = "Launch Date required")
 	@Column(name="me_date_of_launch")
-	@DateTimeFormat(pattern = "dd/MM/yyyy")
+	@DateTimeFormat(pattern = "dd-MM-yyyy")
 	@Temporal(TemporalType.DATE)
 	private Date dateOfLaunch;
 
