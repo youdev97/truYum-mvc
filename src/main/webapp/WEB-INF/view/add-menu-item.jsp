@@ -52,7 +52,7 @@
 						<label class="form-item" for="field-dateOfLaunch">Date of Launch</label>
 						<sf:input class="form-input" type="text"
 							name="dateOfLaunch" id="field-dateOfLaunch" path="dateOfLaunch"
-							placeholder="dd/mm/yyyy"/>
+							placeholder="dd-MM-yyyy"/>
 						<sf:errors path="dateOfLaunch" />
 					</td>
 					<td>
