@@ -20,8 +20,8 @@
 		</nav>
 	</header>
 	<article>
-		<h2 class="article-heading">Edit Menu Item</h2>
-		<sf:form name="editMenuItemForm" action="edit-menu-item" modelAttribute="menuItemBean" method="POST">
+		<h2 class="article-heading">Add Menu Item</h2>
+		<sf:form name="addMenuItemForm" action="add-menu-item" modelAttribute="menuItemBean" method="POST">
 			<sf:input path="id" type="number" style="display:none"/>
 			<table class="form-table">
 				<tr>
@@ -52,7 +52,7 @@
 						<label class="form-item" for="field-dateOfLaunch">Date of Launch</label>
 						<sf:input class="form-input" type="text"
 							name="dateOfLaunch" id="field-dateOfLaunch" path="dateOfLaunch"
-							placeholder="dd-MM-yyyy"/>
+							placeholder="dd/mm/yyyy"/>
 						<sf:errors path="dateOfLaunch" />
 					</td>
 					<td>
@@ -61,7 +61,6 @@
 							<sf:option value="Starters">Starters</sf:option>
 							<sf:option value="Main Course">Main Course</sf:option>
 							<sf:option value="Dessert">Dessert</sf:option>
-							<sf:option value="Sides">Sides</sf:option>
 							<sf:option value="Drinks">Drinks</sf:option>
 						</sf:select>
 					</td>

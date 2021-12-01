@@ -15,8 +15,8 @@
 			</nav>
 		</header>
 		<article>
-			<h2 class="article-heading">Edit Menu Item Status</h2>
-			<p class="article-notification col-left">Menu Item details saved successfully</p>
+			<h2 class="article-heading">${headline}</h2>
+			<p class="article-notification col-left">${msg}</p>
 		</article>
 		<footer>
 			<p>Copyright &copy; 2019</p>

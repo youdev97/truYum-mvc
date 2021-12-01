@@ -4,7 +4,8 @@
 <html>
 <head>
 <title>truYum</title>
-<link rel="icon" type="image/ico" href="/resources/images/truyum-logo-dark.png" />
+<link rel="icon" type="image/ico"
+	href="/resources/images/truyum-logo-dark.png" />
 <link rel="stylesheet" type="text/css" href="/resources/style/style.css" />
 </head>
 <body>
@@ -35,10 +36,14 @@
 					<td><fmt:formatDate pattern = "dd-MM-yyyy" value ="${menuItem.dateOfLaunch}" /></td>
 					<td>${menuItem.category}</td>
 					<td>${menuItem.freeDelivery ? 'Yes': 'No'}</td>
-					<td><a class="action-link" href="/show-edit-menu-item?menuItemId=${menuItem.id}">Edit</a></td>
+					<td><a class="action-link"
+						href="/show-edit-menu-item?menuItemId=${menuItem.id}">Edit</a></td>
 				</tr>
 			</c:forEach>
 		</table>
+		<a href="/add-menu-item">
+			<input type="button" value="Add" />
+		</a>
 	</article>
 	<footer>
 		<p>Copyright &copy; 2019</p>

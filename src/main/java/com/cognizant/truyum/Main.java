@@ -1,31 +1,22 @@
 package com.cognizant.truyum;
 
-import org.apache.catalina.Context;
-import org.apache.tomcat.util.scan.StandardJarScanner;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
-import org.springframework.boot.web.embedded.tomcat.TomcatServletWebServerFactory;
-import org.springframework.context.annotation.Bean;
+import org.springframework.boot.builder.SpringApplicationBuilder;
+import org.springframework.boot.web.servlet.support.SpringBootServletInitializer;
 import org.springframework.context.annotation.ComponentScan;
 
 @SpringBootApplication
-@ComponentScan({"com.cognizant.truyum.*"})
-public class Main {
+@ComponentScan({ "com.cognizant.truyum.*" })
+public class Main extends SpringBootServletInitializer {
+
+	@Override
+	protected SpringApplicationBuilder configure(SpringApplicationBuilder builder) {
+		return builder.sources(Main.class);
+	}
 
 	public static void main(String[] args) {
-		 SpringApplication.run(Main.class, args);
+		SpringApplication.run(Main.class, args);
 	}
 
-	@Bean
-	public TomcatServletWebServerFactory tomcatFactory() {
-	    return new CustomTomcatServletWebServerFactory();
-	}
-
-	static class CustomTomcatServletWebServerFactory extends TomcatServletWebServerFactory {
-
-	    @Override
-	    protected void postProcessContext(Context context) {
-	        ((StandardJarScanner) context.getJarScanner()).setScanManifest(false);
-	    }
-	}
 }

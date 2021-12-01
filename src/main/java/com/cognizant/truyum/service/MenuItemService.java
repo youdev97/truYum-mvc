@@ -34,7 +34,7 @@ public class MenuItemService {
 	}
 
 	@Transactional
-	public void modifyMenuItem(MenuItem menuItem) {
+	public void saveMenuItem(MenuItem menuItem) {
 		menuItemRepository.save(menuItem);
 	}
 
