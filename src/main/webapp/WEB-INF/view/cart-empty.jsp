@@ -21,8 +21,6 @@
 				<a class="article-link" href="/show-menu-list-customer">Menu Item List</a>.
 			</p>
 		</article>
-		<footer>
-			<p>Copyright &copy; 2019</p>
-		</footer>
+		<jsp:include page="footer.jsp"/>
 	</body>
 </html>

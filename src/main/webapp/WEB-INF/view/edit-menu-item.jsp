@@ -34,7 +34,7 @@
 				</tr>
 				<tr>
 					<td>
-						<label class="form-item" for="field-price">Price (Rs.)</label> 
+						<label class="form-item" for="field-price">Price (&euro;)</label> 
 						<sf:input path="price" class="form-input form-input-right"
 							type="number" name="price" id="field-price" step="any" required="true"/>
 						<sf:errors path="price" />
@@ -81,8 +81,6 @@
 			</table>
 		</sf:form>
 	</article>
-	<footer>
-		<p>Copyright &copy; 2019</p>
-	</footer>
+	<jsp:include page="footer.jsp"/>
 </body>
 </html>

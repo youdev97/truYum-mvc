@@ -80,8 +80,6 @@
 			</table>
 		</sf:form>
 	</article>
-	<footer>
-		<p>Copyright &copy; 2019</p>
-	</footer>
+	<jsp:include page="footer.jsp"/>
 </body>
 </html>

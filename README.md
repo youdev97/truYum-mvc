@@ -2,8 +2,8 @@
 
 ## Introduction
 
-It's practice case study that I had to realize while following the Cognizant's FullStack Engineer Program.
-Spring MVC App for a Restaurant 'truYum' and where multiple use case specification must be provided like CRUD of Menu Items, Carts, JSP pages, forms etc.
+It's practice case study that I had to realize while following the Cognizant's FullStack Engineer Program.  
+Spring MVC App for a Restaurant 'truYum' and where multiple use case specification must be provided like CRUD of Menu Items and Carts, JSP Spring Data JPA, Forms Validation etc.
 
 ## Architecture
 
@@ -15,8 +15,10 @@ Admin should be able to edit each menu item
 * Java
 * Maven
 * Spring Boot
+* Data JPA
 * H2
-* JSP
+* Validation
+* JSP, JSTL
 
 ## Run
 

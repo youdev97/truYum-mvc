@@ -31,7 +31,7 @@
 					<tr>
 					<td class="col-left">${menuItem.name}</td>
 					<td class="col-left">${menuItem.freeDelivery ? 'Yes': 'No'}</td>
-					<td class="col-right">Rs. ${menuItem.price}</td>
+					<td class="col-right">${menuItem.price} &euro;</td>
 					<td>
 						<a class="action-link" href="/remove-cart?menuItemId=${menuItem.id}&&userId=1">Delete</a>
 					</td>
@@ -40,13 +40,11 @@
 				<tr>
 					<th></th>
 					<th class="col-left">Total</th>
-					<th class="col-right">Rs. ${cart.total}</th>
+					<th class="col-right">${cart.total} &euro;</th>
 					<th></th>
 				</tr>
 			</table>
 		</article>
-		<footer>
-			<p>Copyright &copy; 2019</p>
-		</footer>
+		<jsp:include page="footer.jsp"/>
 	</body>
 </html>

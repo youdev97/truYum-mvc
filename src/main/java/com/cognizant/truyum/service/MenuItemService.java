@@ -30,12 +30,18 @@ public class MenuItemService {
 
 	@Transactional
 	public MenuItem getMenuItem(long menuItemId) throws TruyumNotFoundException {
-		return menuItemRepository.findById(menuItemId).orElseThrow(() -> new TruyumNotFoundException("Menu Item " + menuItemId + " doesn't exist"));
+		return menuItemRepository.findById(menuItemId)
+				.orElseThrow(() -> new TruyumNotFoundException("Menu Item " + menuItemId + " doesn't exist"));
 	}
 
 	@Transactional
 	public void saveMenuItem(MenuItem menuItem) {
 		menuItemRepository.save(menuItem);
+	}
+
+	@Transactional
+	public void delete(long menuItemId) {
+		menuItemRepository.deleteById(menuItemId);
 	}
 
 }
